@@ -1,0 +1,91 @@
+/* TODO: Make responsive */
+
+.loginScreen {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background: url("../../Media/netflixLoginBackground4.jpeg") center no-repeat;
+  background-size: cover;
+  align-items: center;
+  animation: fadein ease 1s;
+}
+
+.loginScreen-Logo {
+  position: fixed;
+  top: 25px;
+  left: 4vw;
+  height: 32px;
+  object-fit: contain;
+}
+.loginScreen-button {
+  position: fixed;
+  top: 25px;
+  right: 4vw;
+  padding: 10px 25px;
+  font-size: 1rem;
+  color: #ffffff;
+  background-color: #f00000;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+.loginScreen-gradient {
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.4);
+  background-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8) 0,
+    rgba(0, 0, 0, 0) 60%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+}
+
+.loginScreen-body {
+  position: absolute;
+  top: 30%;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  padding: 20px;
+  z-index: 3;
+  animation: box2in 0.4s;
+}
+.loginScreen-body > h1 {
+  max-width: 640px;
+  font-size: 3.125rem;
+  margin: 0 auto;
+}
+
+.loginScreen-body > h2,
+h3 {
+  padding: 20px;
+}
+
+.loginScreen-input {
+  margin: 20px;
+}
+
+.loginScreen-input > form > input {
+  padding: 10px;
+  outline-width: 0;
+  height: 30px;
+  width: 30%;
+  border: none;
+  max-width: 600px;
+}
+
+.loginScreen-input > form > input::placeholder {
+  color: gray;
+}
+
+.loginScreen-getStarted {
+  padding: 16px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #f00000;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}

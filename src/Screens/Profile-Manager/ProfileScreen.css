@@ -1,0 +1,152 @@
+/* TODO: make responsive -font, add some min styling,  */
+
+@font-face {
+  font-family: "NetflixSansLight";
+  src: url("../../Media/netflix-sans-all/NetflixSansLight.ttf");
+}
+
+@font-face {
+  font-family: "NetflixSansMeduim";
+  src: url("../../Media/netflix-sans-all/NetflixSansMedium.ttf");
+}
+
+.profileScreen-wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.profileScreen-body-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 3vw;
+  min-width: 400px;
+}
+
+.profileScreen-box {
+  all: inherit;
+  animation: boxIn 0.4s;
+  min-width: 400px;
+}
+
+.profileScreen-button {
+  text-align: center;
+  letter-spacing: 2px;
+  font-size: 1.2vw;
+  font-family: NetflixSansMedium;
+  padding: 10px 25px;
+  border: 1px solid #ffffff;
+  opacity: 0.5;
+  cursor: pointer;
+}
+.profileScreen-button:hover {
+  opacity: 1;
+}
+
+.profileScreen-button-2 {
+  opacity: 1;
+  color: rgb(17, 17, 17);
+  background-color: #ffffff;
+}
+.profileScreen-button-2:hover {
+  color: #ffffff;
+  background-color: #f00000;
+  border: 1px solid #f00000;
+}
+
+.profileScreen-title {
+  text-align: center;
+  font-size: 3.5vw;
+  font-family: NetflixSansLight;
+  margin: 1.6vw 0;
+}
+
+.profileScreen-profiles {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  margin: 0 0 4vw 0;
+}
+
+.profileScreen-profile {
+  display: flex;
+  flex-direction: column;
+  color: gray;
+  font-size: 1.3vw;
+  font-family: NetflixSansLight;
+
+  animation: boxIn 0.4s;
+}
+
+.profileScreen-profile:hover {
+  color: white;
+}
+
+.profileScreen-avatar-logo {
+  width: 10vw;
+  height: 10vw;
+  min-width: 80px;
+  min-height: 80px;
+  position: relative;
+  margin: 1vw;
+  cursor: pointer;
+}
+
+.profileScreen-avatar-logo > img {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  border-radius: 4px;
+}
+
+.profileScreen-avatar-selected {
+  background-color: transparent;
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+.profileScreen-avatar-selected:hover {
+  border: 2px solid white;
+}
+
+.profileScreen-avatar-selected > img {
+  width: 2.5vw;
+}
+
+.profileScreen-avatar-selected-dark {
+  background-color: rgba(17, 17, 17, 0.3);
+}
+
+.add-profile {
+  width: 10vw;
+  height: 10vw;
+  min-width: 80px;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  margin: 1vw;
+  cursor: pointer;
+}
+
+.add-profile:hover {
+  background-color: #ffffff;
+}
+
+.add-profile > img {
+  width: 50%;
+}

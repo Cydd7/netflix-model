@@ -1,0 +1,263 @@
+@font-face {
+  font-family: NetflixSansRegular;
+  src: url("../Media/netflix-sans-all/NetflixSansRegular.ttf");
+}
+
+.row {
+  /* Fix box of vw size to constraint the carousel */
+  width: 100vw;
+  display: block;
+  overflow: hidden;
+  margin: 3vw 0 3vw 0;
+}
+.row h2 {
+  font-size: 1.4vw;
+  font-stretch: expanded;
+  font-family: NetflixSansRegular;
+  -webkit-font-smoothing: antialiased;
+  margin-bottom: 10px;
+}
+
+.row-flexbox {
+  /* Write something */
+  display: flex;
+  /* flex-direction: row; */
+  width: 100%;
+  height: 15%;
+  overflow-x: scroll;
+  overflow-y: visible;
+  flex-wrap: nowrap;
+}
+.row-flexbox::-webkit-scrollbar {
+  display: none;
+}
+.row-flexbox-large {
+  height: 200px;
+}
+
+.movie-wrapper {
+  position: relative;
+  flex: 0 0 auto;
+  width: 15vw;
+  padding: 0 0.2vw;
+  vertical-align: top;
+  /* display: inline-block; */
+  /* object-fit: contain;
+  
+    width: 200px;
+    height: 100px;
+    margin-right: 10px; */
+  object-fit: contain;
+  /* width: 15vw; */
+  max-height: 200px;
+
+  /* Final */
+  transition: transform 450ms;
+  cursor: pointer;
+  border-radius: 3px;
+
+  animation: fadein ease 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+.movie-wrapper:hover {
+  transform: scale(1.5);
+  z-index: 301;
+}
+
+.poster-wrapper {
+  /* width: 180px; */
+  max-height: 250px;
+}
+.poster-wrapper:hover {
+  transform: scale(1.09);
+}
+
+.box-relative {
+  position: relative;
+}
+
+.movie-backdrop {
+  /* position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0; */
+
+  width: 100%;
+  border-radius: 3px;
+}
+
+.movie-poster {
+}
+
+react-player {
+  /* width: 100px;
+    max-height: 100px; */
+
+  font-size: 1px;
+  z-index: 400;
+}
+
+.movie-logo {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  filter: drop-shadow(0px 0px 5px black);
+
+  max-width: 50%;
+  max-height: 75%;
+  z-index: 100;
+}
+
+.n-logo {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 15px;
+  z-index: 500;
+  filter: drop-shadow(0px 0px 2px black);
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* _____________________________________________________________________________________________ */
+
+@font-face {
+  font-family: NetflixSansRegular;
+  src: url("../Media/netflix-sans-all/NetflixSansRegular.ttf");
+}
+
+.row {
+  /* Fix box of vw size to constraint the carousel */
+  width: 100vw;
+  display: block;
+  overflow: hidden;
+  margin: 3vw 0 3vw 0;
+}
+.row h2 {
+  font-size: 1.4vw;
+  font-stretch: expanded;
+  font-family: NetflixSansRegular;
+  -webkit-font-smoothing: antialiased;
+  margin-bottom: 10px;
+  padding-left: 4vw;
+}
+
+.row-flexbox {
+  /* Write something */
+  display: flex;
+  /* flex-direction: row; */
+  width: 100%;
+  height: 15%;
+  overflow-x: scroll;
+  overflow-y: visible;
+  flex-wrap: nowrap;
+  padding-left: 4vw;
+}
+.row-flexbox::-webkit-scrollbar {
+  display: none;
+}
+.row-flexbox-large {
+  height: 200px;
+}
+
+.movie-wrapper {
+  position: relative;
+  flex: 0 0 auto;
+  width: 15vw;
+  padding: 0 0.2vw;
+  vertical-align: top;
+  /* display: inline-block; */
+  /* object-fit: contain;
+
+  width: 200px;
+  height: 100px;
+  margin-right: 10px; */
+  object-fit: contain;
+  /* width: 15vw; */
+  max-height: 200px;
+
+  /* Final */
+  transition: transform 450ms;
+  cursor: pointer;
+  border-radius: 3px;
+
+  animation: fadein ease 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+.movie-wrapper:hover {
+  transform: scale(1.5);
+  z-index: 301;
+}
+
+.poster-wrapper {
+  /* width: 180px; */
+  max-height: 250px;
+}
+.poster-wrapper:hover {
+  transform: scale(1.09);
+}
+
+.box-relative {
+  position: relative;
+}
+
+.movie-backdrop {
+  /* position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; */
+
+  width: 100%;
+  border-radius: 3px;
+}
+
+.movie-poster {
+}
+
+react-player {
+  /* width: 100px;
+  max-height: 100px; */
+
+  font-size: 1px;
+  z-index: 400;
+}
+
+.movie-logo {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  filter: drop-shadow(0px 0px 5px black);
+
+  max-width: 50%;
+  max-height: 75%;
+  z-index: 100;
+}
+
+.n-logo {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 15px;
+  z-index: 500;
+  filter: drop-shadow(0px 0px 2px black);
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

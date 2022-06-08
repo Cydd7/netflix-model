@@ -1,0 +1,14 @@
+/* TODO: Make responsive */
+
+.loader-wrapper {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.loader-video {
+  position: absolute;
+  object-fit: contain;
+  width: 100vw;
+  height: 100vh;
+}

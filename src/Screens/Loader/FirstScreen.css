@@ -1,0 +1,387 @@
+.FirstScreen {
+  background-color: white;
+}
+
+.FirstScreen-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 93vh;
+  align-items: center;
+  justify-content: space-evenly;
+
+  font-family: "NetflixSansMedium";
+  font-weight: bold;
+  font-size: 40px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+/* -------------------------------------------------------------------------------------------- */
+
+.sound {
+  position: relative;
+  top: 3vw;
+  left: 3vw;
+  width: 5vw;
+  height: 5vw;
+  color: #000000;
+  transition: all 0.4s;
+  z-index: 4;
+}
+.sound--icon {
+  width: 5vw;
+  height: 5vw;
+  font-size: 5vw;
+  display: block;
+  margin: auto;
+  z-index: 9;
+}
+.sound--wave {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border: 2px solid transparent;
+  border-right: 2px solid #000000;
+  border-radius: 50%;
+  transition: all 0.4s;
+  margin: auto;
+}
+.sound--wave_one {
+  width: 50%;
+  height: 50%;
+}
+.sound--wave_two {
+  width: 75%;
+  height: 75%;
+}
+
+.sound-mute {
+  width: 5vw;
+  height: 5vw;
+  position: relative;
+  z-index: 4;
+  top: 3vw;
+  left: 9vw;
+  color: black;
+
+  transition: all 0.4s;
+}
+.sound-mute .sound--wave {
+  border-radius: 0;
+  width: 50%;
+  height: 50%;
+  border-width: 0 2px 0 0;
+  border-right: 2px solid black;
+}
+.sound-mute .sound--wave_one {
+  transform: rotate(45deg) translate3d(0, -50%, 0);
+}
+.sound-mute .sound--wave_two {
+  transform: rotate(-45deg) translate3d(0, 50%, 0);
+}
+
+/* -------------------------------------------------------------------------------------------- */
+
+.FirstScreen-button {
+  position: relative;
+  width: 16vw;
+  height: 10vw;
+  border: #111 solid 10px;
+  overflow: hidden;
+  border-radius: 100px;
+  background-color: transparent;
+  background-color: #bbbbbb;
+  transition: 0.6s all;
+  -webkit-box-reflect: below -1px linear-gradient(transparent 30%, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4));
+
+  display: none;
+}
+
+.FirstScreen-button-loaded {
+  animation-delay: 3s;
+  animation: box2In 0.7s cubic-bezier(0.2, 0.6, 0.2, 1);
+  display: block;
+}
+
+.checkbox {
+  position: relative;
+  top: -5vw;
+  width: 16vw;
+  height: 10vw;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 10;
+}
+.knobs,
+.layer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.layer {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  z-index: 4;
+}
+
+.knobs {
+  content: "";
+  position: absolute;
+  width: 10vw;
+  height: 10vw;
+  background-color: transparent;
+  border-radius: 50%;
+  transition: 0.4s all;
+  box-shadow: 6px 1px 2px #111111;
+  filter: drop-shadow(0px 0px 5px #222222);
+  z-index: 4;
+}
+
+@keyframes back {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-184vw, -190vw);
+  }
+}
+
+@keyframes back2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-176vw, -185vw);
+  }
+}
+
+/* @keyframes back2 {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateY(5vw);
+  }
+  50% {
+    transform: translateX(5vw) translateY(5vw);
+  }
+  75% {
+    transform: translateX(5vw) translateY(0);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+} */
+
+.knobs-color {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 200vw;
+  height: 200vw;
+  background: linear-gradient(
+    135deg,
+    #2976ab 0%,
+    #7e0fff 20%,
+    #bd328f 40%,
+    #a960ee 60%,
+    #7132bd 80%,
+    #292f75 90%,
+    #2976ab 100%
+  );
+
+  /* --gradientColorZero: #a960ee;
+  --gradientColorOne: #ff333d;
+  --gradientColorTwo: #90e0ff;
+  --gradientColorThree: #ffcb57;
+  --gradientColorZeroTransparent: rgba(169, 96, 238, 0);
+  --gradientColorOneTransparent: rgba(255, 51, 61, 0);
+  --gradientColorTwoTransparent: rgba(144, 224, 255, 0);
+  --gradientColorThreeTransparent: rgba(255, 203, 87, 0);
+  --gradientAngle: var(--angleStrong);
+  --gradientHeight: calc(
+    100% + var(--sectionPaddingTop) + var(--transformOriginX) *
+      var(--sectionAngleSin)
+  );
+  --offsetX: var(--gutterWidth);
+  --transformOriginX: -60px;
+  --sectionAngleSin: var(--angleStrongSin);
+
+  background: radial-gradient(
+        var(--gradientColorThree) 23%,
+        var(--gradientColorThreeTransparent) 67% 100%
+      )
+      385px -24px,
+    radial-gradient(
+        var(--gradientColorOne) 0,
+        var(--gradientColorOneTransparent) 60% 100%
+      ) -940px 290px,
+    radial-gradient(
+        var(--gradientColorTwo) 10%,
+        var(--gradientColorTwoTransparent) 60% 100%
+      ) -120px 250px,
+    radial-gradient(
+        var(--gradientColorOne) 40%,
+        var(--gradientColorOneTransparent) 57% 100%
+      )
+      495px -44px,
+    radial-gradient(
+        var(--gradientColorZero) 30%,
+        var(--gradientColorZeroTransparent) 67% 100%
+      )
+      122px -120px,
+    radial-gradient(
+        var(--gradientColorZero) 10%,
+        var(--gradientColorZeroTransparent) 60% 100%
+      ) -420px 120px,
+    radial-gradient(
+        var(--gradientColorTwo) 15%,
+        var(--gradientColorTwoTransparent) 50% 100%
+      ) -620px 0,
+    radial-gradient(
+        var(--gradientColorTwo) 25%,
+        var(--gradientColorTwoTransparent) 50% 100%
+      )
+      520px -250px,
+    var(--gradientColorZero);
+
+  background-repeat: repeat-y; */
+
+  z-index: 2;
+  animation: back 10s cubic-bezier(0.5, 0, 0.5, 1) alternate infinite;
+}
+
+.checkbox:checked + .knobs {
+  left: 6vw;
+  border-radius: 150px;
+  box-shadow: -6px 1px 2px #111111;
+}
+
+/* -------------------------------------------------------------------------------------------- */
+
+.FirstScreen-span {
+  position: relative;
+  letter-spacing: 1px;
+  font-size: 4vw;
+  top: 16px;
+  left: 0;
+  padding: 10px 40px;
+  user-select: none;
+  color: transparent;
+  color: black;
+  text-decoration: none;
+  transition: 0.6s all;
+  overflow: hidden;
+  cursor: pointer;
+  z-index: 1;
+  animation: textColor 10s cubic-bezier(0.5, 0, 0.5, 1) alternate infinite;
+  border-radius: 4px;
+}
+.FirstScreen-span:hover {
+  background: #111;
+  -webkit-box-reflect: below 0px
+    linear-gradient(transparent, rgba(0, 0, 0, 0.3));
+}
+.FirstScreen-span-anim {
+  overflow: visible;
+  display: none;
+}
+.FirstScreen-span-anim-loaded {
+  animation-delay: 3s;
+  animation: box2In 0.7s cubic-bezier(0.2, 0.6, 0.2, 1);
+  display: block;
+}
+
+@keyframes textColor {
+  0% {
+    color: #2976ab;
+  }
+  20% {
+    color: #7e0fff;
+  }
+
+  40% {
+    color: #bd328f;
+  }
+  60% {
+    color: #a960ee;
+  }
+  80% {
+    color: #7132bd;
+  }
+  90% {
+    color: #292f75;
+  }
+
+  100% {
+    color: #2976ab;
+  }
+}
+
+.FirstScreen-copyright {
+  color: black;
+  text-align: center;
+  font-family: NetflixSansRegular;
+  font-size: 20px;
+  animation-delay: 2s;
+  animation: opacity 1s;
+}
+
+/*! Responsive --------------------------------------------------------------------------------------------  */
+
+@media only screen and (max-width: 800px) {
+  .FirstScreen-wrapper {
+    flex-direction: column;
+  }
+
+  .sound {
+    position: relative;
+    top: 4.5vw;
+    left: 4.5vw;
+    width: 7.5vw;
+    height: 7.5vw;
+  }
+  .sound--icon {
+    width: 7.5vw;
+    height: 7.5vw;
+    font-size: 7.5vw;
+  }
+  .sound-mute {
+    width: 7.5vw;
+    height: 7.5vw;
+    top: 4.5vw;
+    left: 12vw;
+  }
+  .FirstScreen-button {
+    width: 24vw;
+    height: 15vw;
+  }
+  .checkbox {
+    top: -7.5vw;
+    width: 24vw;
+    height: 15vw;
+  }
+  .knobs {
+    width: 15vw;
+    height: 15vw;
+  }
+  .knobs-color {
+    animation: back2 10s cubic-bezier(0.5, 0, 0.5, 1) alternate infinite;
+  }
+  .checkbox:checked + .knobs {
+    left: 8vw;
+  }
+  .FirstScreen-span {
+    font-size: 6vw;
+  }
+  .FirstScreen-copyright {
+    font-size: 2vh;
+  }
+}

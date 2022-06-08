@@ -1,0 +1,307 @@
+/* TODO: Make responsive - font */
+
+@font-face {
+  font-family: "NetflixSansLight";
+  src: url("../Media/netflix-sans-all/NetflixSansLight.ttf");
+}
+@font-face {
+  font-family: "NetflixSansMedium";
+  src: url("../Media/netflix-sans-all/NetflixSansMedium.ttf");
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.banner {
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  font-family: NetflixSansLight;
+  color: white;
+  object-fit: contain;
+  height: 56.25vw;
+  position: relative;
+  z-index: 1;
+  animation: fadein ease 2s;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.banner-video-wrapper {
+  position: absolute;
+  top: -3vw;
+  left: 0vw;
+  width: 100vw;
+  height: 56.25vw;
+  z-index: 2;
+  opacity: 0;
+}
+
+.banner-video-wrapper-2 {
+  opacity: 1;
+  animation: fadein ease 0.5s;
+}
+
+.banner-video-wrapper-3 {
+  opacity: 0;
+  animation: fadeout ease 0.5s;
+}
+
+.react-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.banner-contents {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-left: 4vw;
+
+  position: relative;
+  bottom: 20vw;
+}
+
+.banner-contents > * {
+  z-index: 4;
+}
+
+/*
+Aspect Ratio of logo-wrapper is maintained to 3:2 
+and the logo image is contained in the box and set 
+free to resize.
+*/
+
+@keyframes win {
+  from {
+    width: 20vw;
+    height: 13.33vw;
+    font-size: 16px;
+  }
+  to {
+    width: 30vw;
+    height: 20vw;
+    font-size: 24px;
+  }
+}
+@keyframes wout {
+  from {
+    width: 30vw;
+    height: 20vw;
+    font-size: 24px;
+  }
+  to {
+    width: 20vw;
+    height: 13.33vw;
+    font-size: 16px;
+  }
+}
+
+.banner-logo {
+  position: absolute;
+  bottom: 0;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.logo-wrapper {
+  z-index: 4;
+  position: relative;
+  object-fit: contain;
+}
+.logo-wrapper-small {
+  animation: wout 0.4s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+.logo-wrapper-large {
+  animation: 0.4s win;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.banner-title {
+  position: absolute;
+  bottom: 0;
+
+  padding-bottom: 1vh;
+}
+
+@keyframes heightIn {
+  from {
+    opacity: 0;
+    height: 0;
+  }
+  to {
+    opacity: 1;
+    height: 4vw;
+  }
+}
+
+@keyframes heightOut {
+  from {
+    opacity: 1;
+    height: 4vw;
+  }
+  to {
+    opacity: 0;
+    height: 0;
+  }
+}
+
+.banner-description {
+  text-align: left;
+  width: 33vw;
+  line-height: 1.2;
+  margin-top: 2vh;
+  font-size: 1.2vw;
+  max-width: 460px;
+  user-select: none;
+}
+
+.banner-description-show {
+  animation: heightIn 0.4s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.banner-description-hide {
+  animation: heightOut ease 0.4s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.banner-buttons {
+  display: flex;
+  flex-direction: row;
+  margin-top: 3vh;
+  z-index: 101;
+}
+
+.banner-button {
+  font-family: NetflixSansMedium;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  font-size: 1.3vw;
+  border-radius: 0.2vw;
+  display: flex;
+  padding: 1.5vh 2vw;
+  margin-right: 1rem;
+  align-items: center;
+
+  opacity: 1;
+  background-color: #ffffff;
+  color: black;
+}
+
+.play-icon {
+  width: 20px;
+  margin-right: 10px;
+}
+
+.myList {
+  background-color: rgba(100, 100, 100, 0.9);
+  color: #fff;
+  padding: 1.5vh 3vw;
+}
+
+.banner-button:hover {
+  opacity: 0.7;
+  transition: all 0.2s;
+}
+
+.banner-fadeTop {
+  height: 70px;
+  width: 100vw;
+  background: linear-gradient(
+    to bottom,
+    rgba(17, 17, 17, 0.9),
+    rgba(17, 17, 17, 0.4),
+    rgba(0, 0, 0, 0)
+  );
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  animation: fadein ease 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.banner-fadeSide {
+  height: 56.25vw;
+  width: 60vw;
+  background: linear-gradient(
+    to right,
+    rgba(17, 17, 17, 0.5),
+    rgba(17, 17, 17, 0.25),
+    rgba(0, 0, 0, 0)
+  );
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  animation: fadein ease 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.desc-cover {
+  height: 35vw;
+  width: 40vw;
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  z-index: 100;
+}
+
+.banner-fadeBottom {
+  height: 5vw;
+  width: 100vw;
+  background: linear-gradient(
+    to bottom,
+    rgba(17, 17, 17, 0),
+    rgba(17, 17, 17, 0.7),
+    rgba(17, 17, 17, 1)
+  );
+  position: absolute;
+  bottom: 0vw;
+  z-index: 2;
+  animation: fadein ease 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.banner-mask {
+  height: 56.25vw;
+  width: 100vw;
+  background: transparent;
+  position: absolute;
+  top: 0;
+  z-index: 99;
+}
+
+.banner-mute-icon {
+  position: absolute;
+  right: 7vw;
+  bottom: 20vw;
+  height: 2.5vw;
+  width: 2.5vw;
+  border: 1px solid white;
+  border-radius: 50%;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-mute-icon > img {
+  position: absolute;
+  width: 70%;
+  height: 70%;
+}

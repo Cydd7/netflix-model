@@ -1,0 +1,26 @@
+/* TODO: Make responsive */
+
+.planScreen-plan {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  opacity: 0.8;
+}
+
+.planScreen-plan:hover {
+  opacity: 1;
+}
+
+.planScreen-plan > button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #f00000;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+}
+
+.planScreen-plan-disabled > button {
+  background-color: gray !important;
+}

@@ -1,0 +1,74 @@
+/* TODO: Make responsive - font, add some min styling */
+
+@font-face {
+  font-family: "NetflixSansLight";
+  src: url("../../Media/netflix-sans-all/NetflixSansLight.ttf");
+}
+
+.profileScreen-box-2 {
+  display: flex;
+  flex-direction: column;
+  width: 40vw;
+  min-width: 400px;
+  animation: boxIn 0.4s;
+}
+
+.profileScreen-title-2 {
+  font-family: NetflixSansLight;
+  font-size: 3.8vw;
+  text-align: left;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+.profileScreen-span {
+  font-family: NetflixSansLight;
+  font-size: 1.3vw;
+  color: gray;
+}
+
+.profileScreen-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+  width: 100%;
+  padding: 1.7vw 0;
+  margin: 1.7vw 0;
+}
+
+.profileScreen-avatar {
+  position: relative;
+  left: 0;
+  width: 8vw;
+  height: 8vw;
+  min-width: 80px;
+  min-height: 80px;
+}
+.profileScreen-avatar > img {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  border-radius: 4px;
+}
+
+.enter-name {
+  background-color: gray;
+  color: white;
+  font-family: NetflixSansLight;
+  font-size: 1.6vw;
+  border: none;
+  outline: none;
+  padding: 0.6vw 1.2vw;
+  flex-grow: 1;
+  margin-left: 2vw;
+}
+
+.button-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+.button-wrapper > * {
+  margin-right: 20px;
+}

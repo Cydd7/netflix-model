@@ -1,0 +1,26 @@
+/* TODO: Make responsive */
+
+.app {
+  position: relative;
+  background-color: rgb(17, 17, 17);
+}
+
+.row-wrapper {
+  position: absolute;
+  top: 37vw;
+  /* display: flex;
+  flex-direction: column; */
+  z-index: 40;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.row-wrapper-background {
+  position: absolute;
+  top: 56.25vw;
+  height: 300vh;
+  width: 100vw;
+  z-index: 1;
+  background-color: rgb(17, 17, 17);
+  overflow: hidden;
+}

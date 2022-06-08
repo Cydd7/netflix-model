@@ -1,0 +1,13 @@
+.editProfileScreen-avatars-box {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 90vw;
+  top: 15%;
+  animation: boxIn 0.4s;
+
+  height: 38vw;
+}

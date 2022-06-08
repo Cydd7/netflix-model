@@ -1,0 +1,9 @@
+@font-face {
+  font-family: "NetflixSansLight";
+  src: url("../../Media/netflix-sans-all/NetflixSansLight.ttf");
+}
+
+.deleteScreen-warning {
+  font-family: NetflixSansLight;
+  margin: 2vw;
+}
