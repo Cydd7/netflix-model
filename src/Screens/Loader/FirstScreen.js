@@ -40,7 +40,7 @@ function FirstScreen({ play, toggle, sound }) {
           </div>
         </div>
       </div>
-      <div className="FirstScreen-copyright">&#169;2022 Siddhant Lodha</div>
+      <div className="FirstScreen-copyright">&#169; 2022 Siddhant Lodha</div>
     </div>
   );
 }

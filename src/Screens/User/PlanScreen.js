@@ -1,80 +1,71 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { loadStripe } from "@stripe/stripe-js";
-import {
-  addDoc,
-  collection,
-  query,
-  where,
-  doc,
-  getDocs,
-  onSnapshot,
-  getDoc,
-} from "firebase/firestore";
+import { addDoc, collection, doc, onSnapshot } from "firebase/firestore";
 import { useSelector } from "react-redux";
 import { selectUser } from "../../Features/userSlice";
 import db from "../../Auth/firebase";
 import "./PlanScreen.css";
 
-function PlanScreen() {
-  const [products, setProducts] = useState([]);
+function PlanScreen({ subscription, products }) {
   const user = useSelector(selectUser);
-  const [subscription, setSubscription] = useState(null);
+
+  // TODO: Only one subs should be there. Status 'active=true' should be there for only one. Not working make it work
 
   // Getting subscription info and updating it in subscription hook.
-  // TODO: Only one subs should be there. Status 'active=true' should be there for only one.
-  useEffect(() => {
-    const q = query(doc(db, "customers", user.uid));
 
-    (async function abc(q) {
-      const qs = await getDoc(q);
-      const ss = await getDocs(collection(qs.ref, "subscriptions"));
-      return ss;
-    })(q).then((ss) => {
-      ss.forEach(async (subscription) => {
-        setSubscription({
-          role: subscription.data().role,
-          current_period_end: subscription.data().current_period_end.seconds,
-          current_period_start:
-            subscription.data().current_period_start.seconds,
-        });
-      });
-    });
-  }, [user.uid]);
+  // useEffect(() => {
+  //   const q = query(doc(db, "customers", user.uid));
 
-  console.log("subs ", subscription);
+  //   (async function abc(q) {
+  //     const qs = await getDoc(q);
+  //     const ss = await getDocs(collection(qs.ref, "subscriptions"));
+  //     return ss;
+  //   })(q).then((ss) => {
+  //     ss.forEach(async (subscription) => {
+  //       setSubscription({
+  //         role: subscription.data().role,
+  //         current_period_end: subscription.data().current_period_end.seconds,
+  //         current_period_start:
+  //           subscription.data().current_period_start.seconds,
+  //       });
+  //     });
+  //   });
+  // }, [user.uid]);
 
-  useEffect(() => {
-    const q = query(collection(db, "products"));
-    const qa = query(q, where("active", "==", true));
-    // console.log(qa);
+  // console.log("subs ", subscription);
 
-    async function abc(qa) {
-      const qSnapshot = await getDocs(qa);
-      //   console.log(qSnapshot);
-      return qSnapshot;
-    }
+  // useEffect(() => {
+  //   const q = query(collection(db, "products"));
+  //   const qa = query(q, where("active", "==", true));
+  //   // console.log(qa);
 
-    async function abc2(qs) {
-      const products = {};
-      qs.forEach(async (productDoc) => {
-        products[productDoc.id] = productDoc.data();
-        const priceSnap = await getDocs(collection(productDoc.ref, "prices"));
+  //   async function abc(qa) {
+  //     const qSnapshot = await getDocs(qa);
+  //     //   console.log(qSnapshot);
+  //     return qSnapshot;
+  //   }
 
-        priceSnap.docs.forEach((price) => {
-          products[productDoc.id].prices = {
-            priceId: price.id,
-            priceData: price.data(),
-          };
-        });
-      });
+  //   async function abc2(qs) {
+  //     const products = {};
+  //     qs.forEach(async (productDoc) => {
+  //       products[productDoc.id] = productDoc.data();
+  //       const priceSnap = await getDocs(collection(productDoc.ref, "prices"));
 
-      setProducts(products);
-    }
+  //       priceSnap.docs.forEach((price) => {
+  //         products[productDoc.id].prices = {
+  //           priceId: price.id,
+  //           priceData: price.data(),
+  //         };
+  //       });
+  //     });
 
-    abc(qa).then((qs) => abc2(qs));
-  }, []);
+  //     setProducts(products);
+  //   }
 
-  console.log("pro: ", products);
+  //   abc(qa).then((qs) => abc2(qs));
+  // }, []);
+
+  // console.log("pro: ", products);
 
   const loadCheckout = async (priceId) => {
     const docRef = await addDoc(
@@ -101,21 +92,10 @@ function PlanScreen() {
 
   return (
     <div className="PlanScreen">
-      <br />
-      {subscription && (
-        <p>
-          Renewal date:{" "}
-          {new Date(
-            subscription?.current_period_end * 1000
-          ).toLocaleDateString()}
-        </p>
-      )}
-
       {Object.entries(products).map(([productId, productData]) => {
         const isCurrentPackage = productData?.name
           ?.toLowerCase()
           .includes(subscription?.role.toLowerCase());
-
         // console.log(isCurrentPackage, productData.name, subscription.role);
 
         return (

@@ -4,10 +4,11 @@ import Row from "../../Components/Row";
 import Banner from "../../Components/Banner";
 import Nav from "../../Components/Nav";
 import "./HomeScreen.css";
+import Footer from "../../Components/Footer";
 
 function HomeScreen() {
   return (
-    <div className="app">
+    <div className="HomeScreen">
       <Nav showOptions />
       <Banner />
       <div className="row-wrapper">
@@ -45,7 +46,8 @@ function HomeScreen() {
           fetchURL={requests.fetchDocumentaries}
         />
       </div>
-      <div className="row-wrapper-background"></div>
+
+      <Footer />
     </div>
   );
 }

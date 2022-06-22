@@ -10,19 +10,19 @@ function RowMovie({
   baseURL,
 }) {
   return (
-    <div>
+    <>
       {!(playerLoaded && timeOver && movieId === movie.id) && (
         <>
-          <div className="box-relative">
-            <img
-              key={movie.id}
-              className={`movie-backdrop ${isLargeRow && "movie-poster"}`}
-              src={`${baseURL}${
-                isLargeRow ? movie.poster_path : movie.backdrop_path
-              }`}
-              alt={movie.title || movie.name}
-            />
-          </div>
+          {/* <div className="box-relative"> */}
+          <img
+            key={movie.id}
+            className={`movie-backdrop ${isLargeRow && "movie-poster"}`}
+            src={`${baseURL}${
+              isLargeRow ? movie.poster_path : movie.backdrop_path
+            }`}
+            alt={movie.title || movie.name}
+          />
+          {/* </div> */}
 
           {movie.images.logos[0] && !isLargeRow && (
             <img
@@ -41,7 +41,7 @@ function RowMovie({
           )}
         </>
       )}
-    </div>
+    </>
   );
 }
 

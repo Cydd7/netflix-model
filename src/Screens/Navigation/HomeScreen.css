@@ -1,26 +1,64 @@
 /* TODO: Make responsive */
 
-.app {
+.HomeScreen {
   position: relative;
   background-color: rgb(17, 17, 17);
 }
 
-.row-wrapper {
+.HomeScreen-footer {
   position: absolute;
-  top: 37vw;
-  /* display: flex;
-  flex-direction: column; */
-  z-index: 40;
-  width: 100vw;
-  overflow: hidden;
+  bottom: 9vw;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  z-index: 10;
+  width: 60vw;
+  margin: 0 20vw;
 }
 
-.row-wrapper-background {
-  position: absolute;
-  top: 56.25vw;
-  height: 300vh;
-  width: 100vw;
-  z-index: 1;
-  background-color: rgb(17, 17, 17);
-  overflow: hidden;
+.HomeScreen-footer-icons {
+  display: flex;
+  flex-direction: row;
+  padding: 0.5vw;
+}
+
+.HomeScreen-footer-icon {
+  width: 2vw;
+  padding-right: 1vw;
+}
+
+.HomeScreen-footer-icon > img {
+  width: 100%;
+  cursor: pointer;
+}
+
+.HomeScreen-footer-dummies {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.HomeScreen-footer-dummy {
+  color: rgb(155, 155, 155);
+  font-size: 1.1vw;
+  font-family: NetflixSansRegular;
+  width: 12vw;
+  margin-right: 3vw;
+  margin-bottom: 1vw;
+  cursor: pointer;
+}
+
+.HomeScreen-footer-dummy:hover {
+  text-decoration: underline;
+}
+
+.HomeScreen-copyright {
+  position: relative;
+  bottom: 0;
+  padding: 20px;
+  text-align: center;
+  font-family: NetflixSansRegular;
+  font-size: 20px;
+  color: #fff;
+  z-index: 999;
 }

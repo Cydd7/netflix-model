@@ -19,9 +19,9 @@ function VideoPlayer({
   const muteStatus = useSelector(selectMuteStatus);
 
   return (
-    <div>
+    <>
       {trailerUrl[0] && movieId === movie.id && !posOut && (
-        <div className="react-player">
+        <div className="Row-react-player">
           <ReactPlayer
             className={`react-player-iframe  ${
               playerLoaded && "react-player-iframe-show"
@@ -59,7 +59,7 @@ function VideoPlayer({
           ></div>
         </div>
       )}
-    </div>
+    </>
   );
 }
 

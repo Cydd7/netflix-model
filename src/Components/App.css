@@ -69,6 +69,6 @@
   -webkit-font-smoothing: antialiased;
   color: white;
   font-weight: 200;
-  width: 100vw;
+  /* width: 100vw; */
   /* overflow-x: hidden; */
 }
