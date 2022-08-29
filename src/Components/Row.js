@@ -35,7 +35,7 @@ function Row({ id, title, fetchURL, isLargeRow }) {
 
   useEffect(() => {
     (async () => {
-      const request = await axios.get(fetchURL).catch((error) => {
+      var request = await axios.get(fetchURL).catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         console.log(errorCode + errorMessage);
@@ -44,6 +44,12 @@ function Row({ id, title, fetchURL, isLargeRow }) {
       setMovies(() => {
         return [];
       });
+
+      // request = request.data.results.pop();
+
+      request.data.results.pop();
+      request.data.results.pop();
+      console.log("Hjhkdbckhbda", request.data.results);
 
       request.data.results.forEach((movie) => {
         (async () => {
@@ -176,7 +182,7 @@ function Row({ id, title, fetchURL, isLargeRow }) {
     if (!matches) {
       matches = [0];
     }
-    if (matches[0] > -((row.scrollWidth / row.offsetWidth - 1) * 100)) {
+    if (matches[0] > -((row.scrollWidth / row.offsetWidth - 2) * 100)) {
       row.style.setProperty(
         "transform",
         `translateX(${parseInt(matches[0]) - 92}vw)`

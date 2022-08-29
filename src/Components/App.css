@@ -63,6 +63,10 @@
   margin: 0;
 }
 
+.red {
+  color: #ff333d;
+}
+
 .App {
   background-color: #111;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;

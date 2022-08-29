@@ -1,4 +1,5 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
+import { useState } from "react";
 import {
   getAuth,
   createUserWithEmailAndPassword,
@@ -7,6 +8,8 @@ import {
 import "./SignupScreen.css";
 
 function SignupScreen() {
+  const [tooltip, setTooltip] = useState(true);
+  const [timeover, setTimeover] = useState(false);
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
 
@@ -27,6 +30,13 @@ function SignupScreen() {
       });
   };
 
+  useEffect(() => {
+    setTimeout(() => {
+      setTimeover(true);
+      setTooltip(false);
+    }, 3000);
+  }, []);
+
   const signIn = (e) => {
     e.preventDefault();
     signInWithEmailAndPassword(
@@ -44,10 +54,52 @@ function SignupScreen() {
       });
   };
 
+  function st(bool) {
+    if (timeover) {
+      if (bool) {
+        setTooltip(true);
+      } else {
+        setTooltip(false);
+      }
+    }
+  }
+
   return (
     <div className="signupScreen">
       <form>
-        <h1>Sign In</h1>
+        <div
+          className={`signupScreen-tooltip ${
+            tooltip && "signupScreen-tooltip-show"
+          }`}
+          onMouseOver={() => {
+            st(true);
+          }}
+          onMouseOut={() => {
+            st(false);
+          }}
+        >
+          <b>Guest Login?</b>
+          <br />
+          User: <span className="red">"test@gmail.com"</span>
+          <br />
+          Password: <span className="red">"test@123"</span>
+          <img src={require("../../Media/dropdown_white.png")} alt="" />
+        </div>
+
+        <h1>
+          Sign In{" "}
+          <span
+            onMouseOver={() => {
+              st(true);
+            }}
+            onMouseOut={() => {
+              st(false);
+            }}
+            className="signupScreen-info"
+          >
+            &#9432;
+          </span>
+        </h1>
         <input ref={emailRef} type="email" placeholder="Email" />
         <input ref={passwordRef} type="password" placeholder="Password" />
         <button type="submit" onClick={signIn}>

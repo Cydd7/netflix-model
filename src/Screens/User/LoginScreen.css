@@ -4,7 +4,7 @@
   position: relative;
   height: 100vh;
   width: 100%;
-  background: url("../../Media/netflixLoginBackground4.jpeg") center no-repeat;
+  background: url("../../Media/netflixLoginBackground5.jpeg") center no-repeat;
   background-size: cover;
   align-items: center;
   animation: fadein ease 1s;
@@ -48,7 +48,6 @@
   width: 100%;
   text-align: center;
   color: #fff;
-  padding: 20px;
   z-index: 3;
   animation: box2in 0.4s;
 }
