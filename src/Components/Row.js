@@ -45,8 +45,6 @@ function Row({ id, title, fetchURL, isLargeRow }) {
         return [];
       });
 
-      // request = request.data.results.pop();
-
       request.data.results.pop();
       request.data.results.pop();
       console.log("Hjhkdbckhbda", request.data.results);
@@ -182,7 +180,7 @@ function Row({ id, title, fetchURL, isLargeRow }) {
     if (!matches) {
       matches = [0];
     }
-    if (matches[0] > -((row.scrollWidth / row.offsetWidth - 2) * 100)) {
+    if (matches[0] > -((row.scrollWidth / row.offsetWidth - 1) * 92)) {
       row.style.setProperty(
         "transform",
         `translateX(${parseInt(matches[0]) - 92}vw)`

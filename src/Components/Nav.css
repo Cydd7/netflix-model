@@ -6,7 +6,7 @@
   width: 100vw;
   display: flex;
   z-index: 1000;
-  height: 70px;
+  height: 80px;
   align-items: center;
   /* Animations */
   transition-timing-function: ease-in;
@@ -21,7 +21,7 @@
 .nav_logo {
   position: fixed;
   left: 4vw;
-  height: 32px;
+  height: 60px;
   object-fit: contain;
   cursor: pointer;
 }
