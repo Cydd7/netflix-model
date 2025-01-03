@@ -1,15 +1,19 @@
 .FirstScreen {
-  background-color: white;
+  background-color: #111;
+}
+
+html{
+    background-color: #111;
 }
 
 .FirstScreen-wrapper {
   position: relative;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   width: 100vw;
   height: 93vh;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
 
   font-family: "NetflixSansMedium";
   font-weight: bold;
@@ -23,7 +27,7 @@
 .sound {
   position: relative;
   top: 3vw;
-  left: 3vw;
+  left: 9vw;
   width: 5vw;
   height: 5vw;
   color: #000000;
@@ -65,7 +69,7 @@
   position: relative;
   z-index: 4;
   top: 3vw;
-  left: 9vw;
+  left: 3vw;
   color: black;
 
   transition: all 0.4s;
@@ -87,6 +91,8 @@
 /* -------------------------------------------------------------------------------------------- */
 
 .FirstScreen-button {
+  transform: scale(0.4);
+  margin-top: -5vw;
   position: relative;
   width: 16vw;
   height: 10vw;
@@ -96,14 +102,26 @@
   background-color: transparent;
   background-color: #bbbbbb;
   transition: 0.6s all;
-  -webkit-box-reflect: below -1px linear-gradient(transparent 30%, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4));
+  /* -webkit-box-reflect: below -1px linear-gradient(transparent 30%, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)); */
 
   display: none;
 }
 
+@keyframes customBox2In {
+  from {
+    opacity: 0;
+    transform: scale(0.5, 0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(0.4, 0.4);
+  }
+}
+
 .FirstScreen-button-loaded {
+  transform: scale(0.4);
   animation-delay: 3s;
-  animation: box2In 0.7s cubic-bezier(0.2, 0.6, 0.2, 1);
+  animation: customBox2In 0.7s cubic-bezier(0.2, 0.6, 0.2, 1);
   display: block;
 }
 
@@ -135,11 +153,13 @@
   width: 10vw;
   height: 10vw;
   background-color: transparent;
-  border-radius: 50%;
   transition: 0.4s all;
-  box-shadow: 6px 1px 2px #111111;
   filter: drop-shadow(0px 0px 5px #222222);
   z-index: 4;
+
+  left: 6vw;
+  border-radius: 150px;
+  box-shadow: -6px 1px 2px #111111;
 }
 
 @keyframes back {
@@ -259,9 +279,9 @@
 }
 
 .checkbox:checked + .knobs {
-  left: 6vw;
-  border-radius: 150px;
-  box-shadow: -6px 1px 2px #111111;
+  left:0vw;
+  border-radius: 50%;
+  box-shadow: 6px 1px 2px #111111;
 }
 
 /* -------------------------------------------------------------------------------------------- */
@@ -282,12 +302,10 @@
   cursor: pointer;
   z-index: 1;
   animation: textColor 10s cubic-bezier(0.5, 0, 0.5, 1) alternate infinite;
-  border-radius: 4px;
+  border-radius: 8px;
 }
 .FirstScreen-span:hover {
-  background: #111;
-  -webkit-box-reflect: below 0px
-    linear-gradient(transparent, rgba(0, 0, 0, 0.3));
+  background: #1f1f1f;
 }
 .FirstScreen-span-anim {
   overflow: visible;
@@ -326,7 +344,7 @@
 }
 
 .FirstScreen-copyright {
-  color: black;
+  color: #777;
   text-align: center;
   font-family: NetflixSansRegular;
   font-size: 20px;
@@ -341,7 +359,7 @@
     flex-direction: column;
   }
 
-  .sound {
+  .sound-mute {
     position: relative;
     top: 4.5vw;
     left: 4.5vw;
@@ -353,15 +371,16 @@
     height: 7.5vw;
     font-size: 7.5vw;
   }
-  .sound-mute {
+  .sound {
     width: 7.5vw;
     height: 7.5vw;
     top: 4.5vw;
-    left: 12vw;
+    left: 13vw;
   }
   .FirstScreen-button {
     width: 24vw;
     height: 15vw;
+    transform: scale(0.7);
   }
   .checkbox {
     top: -7.5vw;
@@ -371,12 +390,13 @@
   .knobs {
     width: 15vw;
     height: 15vw;
+    left: 9vw;
   }
   .knobs-color {
     animation: back2 10s cubic-bezier(0.5, 0, 0.5, 1) alternate infinite;
   }
   .checkbox:checked + .knobs {
-    left: 8vw;
+    left: 0;
   }
   .FirstScreen-span {
     font-size: 6vw;

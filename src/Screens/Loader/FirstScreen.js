@@ -36,11 +36,11 @@ function FirstScreen({ play, toggle, sound }) {
           }`}
         >
           <div className="FirstScreen-span" href="" onClick={play}>
-            PLAY
+            Enter
           </div>
         </div>
       </div>
-      <div className="FirstScreen-copyright">&#169; 2022 Siddhant Lodha</div>
+      <div className="FirstScreen-copyright">&#169; 2022</div>
     </div>
   );
 }

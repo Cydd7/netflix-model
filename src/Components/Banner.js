@@ -17,7 +17,7 @@ function Banner() {
   const [blackMask, setBlackMask] = useState(false);
 
   const muteStatus = useSelector(selectMuteStatus);
-  const [muteIcon, setMuteIcon] = useState(false);
+  const [muteIcon, setMuteIcon] = useState(muteStatus);
   const dispatch = useDispatch();
 
   //  Using this hook so that useEffect loads only once during page load
@@ -30,10 +30,10 @@ function Banner() {
         "fetchTopRated",
         "fetchActionMovies",
         "fetchComedyMovies",
-        "fetchRomanceMovies",
+        // "fetchRomanceMovies",
       ];
 
-      var index = Math.floor(Math.random() * 4);
+      var index = Math.floor(Math.random() * 3);
       const request = await axios.get(requests[genreList[index]]);
 
       const selectedMovie =

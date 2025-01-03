@@ -100,8 +100,8 @@ function SignupScreen() {
             &#9432;
           </span>
         </h1>
-        <input ref={emailRef} type="email" placeholder="Email" />
-        <input ref={passwordRef} type="password" placeholder="Password" />
+        <input defaultValue="test@gmail.com" ref={emailRef} type="email" placeholder="Email" />
+        <input defaultValue="test@123"  ref={passwordRef} type="password" placeholder="Password" />
         <button type="submit" onClick={signIn}>
           Sign In
         </button>

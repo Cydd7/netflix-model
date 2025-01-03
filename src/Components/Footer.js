@@ -48,7 +48,7 @@ function Footer() {
         </div>
       </div>
 
-      <div className="HomeScreen-copyright">&#169; 2022 Siddhant Lodha</div>
+      <div className="HomeScreen-copyright">&#169; 2022</div>
     </>
   );
 }

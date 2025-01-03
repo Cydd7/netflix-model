@@ -3,7 +3,7 @@ import SignupScreen from "./SignupScreen";
 import "./LoginScreen.css";
 
 function LoginScreen() {
-  const [signIn, setSignIn] = useState(false);
+  const [signIn, setSignIn] = useState(true);
   const [email, setEmail] = useState("");
 
   function handleUpdate(e) {

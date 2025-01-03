@@ -129,7 +129,7 @@ function App() {
   return (
     <div className="App">
       <Router>
-        {!introEnded ? (
+        {!introEnded && !window.navigator.userAgent.toLowerCase().includes("iphone") ? (
           <IntroScreen setIntroEnded={setIntroEnded} />
         ) : !user ? (
           <LoginScreen />
