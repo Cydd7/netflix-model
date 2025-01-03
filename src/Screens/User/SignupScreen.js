@@ -15,19 +15,30 @@ function SignupScreen() {
 
   const register = (e) => {
     e.preventDefault();
-    createUserWithEmailAndPassword(
-      getAuth(),
-      emailRef.current.value,
-      passwordRef.current.value
-    )
-      .then((userCredential) => {
-        console.log(userCredential.user);
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        alert(errorCode + errorMessage);
-      });
+    if(emailRef.current.value.length!==0 && passwordRef.current.value.length!==0){
+      createUserWithEmailAndPassword(
+        getAuth(),
+        emailRef.current.value,
+        passwordRef.current.value
+      )
+        .then((userCredential) => {
+          console.log(userCredential.user);
+        })
+        .catch((error) => {
+          console.dir(error)
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          if(errorCode === 'auth/email-already-in-use'){
+            alert("User already exists with the email entered");
+          }
+          else{
+            alert(errorMessage)
+          }
+        });
+    }
+    else{
+      alert("Please enter Email and Password")
+    }
   };
 
   useEffect(() => {
@@ -39,19 +50,29 @@ function SignupScreen() {
 
   const signIn = (e) => {
     e.preventDefault();
-    signInWithEmailAndPassword(
-      getAuth(),
-      emailRef.current.value,
-      passwordRef.current.value
-    )
-      .then((userCredential) => {
-        console.log("User Info : ", userCredential.user);
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        alert(errorCode + errorMessage);
-      });
+    if(emailRef.current.value.length!==0 && passwordRef.current.value.length!==0){
+      signInWithEmailAndPassword(
+        getAuth(),
+        emailRef.current.value,
+        passwordRef.current.value
+      )
+        .then((userCredential) => {
+          console.log("User Info : ", userCredential.user);
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          if(errorCode === 'auth/user-not-found'){
+            alert('User does not exist')
+          }
+          else{
+            alert(errorMessage);
+          }
+        });
+    }
+    else{
+      alert("Please enter Email and Password")
+    }
   };
 
   function st(bool) {
@@ -107,10 +128,11 @@ function SignupScreen() {
         </button>
         <h4>
           <span className="signupScreen-gray">
-            New to Netflix?
+            
+            Use above credentials to 
             <span className="signupScreen-link" onClick={register}>
               {" "}
-              Sign up now
+              Sign up
             </span>
             .
           </span>
